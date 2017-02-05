@@ -36,7 +36,13 @@
     <%= f.date_select :enddate %>
   </div>
 
+  <div class="field">
+    <%= f.label :enddate %>
+    <%= collection_select(:course, :klass_id, Klass.all, :id, :klass, {}, {multiple: false})%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

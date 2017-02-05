@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Coursecode</th>
       <th>Responsibleperson</th>
+      <th>Class</th>
       <th>Startdate</th>
       <th>Enddate</th>
       <th colspan="3"></th>
@@ -20,6 +21,11 @@
         <td><%= course.name %></td>
         <td><%= course.coursecode %></td>
         <td><%= course.responsibleperson %></td>
+        <% if course.klass_id? %>
+          <td><%= course.klass.klass %></td>
+        <% else %>
+          <td><%= "no class" %></td>
+        <% end %>
         <td><%= course.startdate %></td>
         <td><%= course.enddate %></td>
         <td><%= link_to 'Show', course %></td>
